@@ -1,0 +1,12 @@
+{
+  "name": "dubs-studios-site",
+  "version": "1.0.0",
+  "description": "Dubs AI Studio website",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'Static site - no build needed'"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^1.0.0"
+  }
+}
