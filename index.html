@@ -317,9 +317,10 @@ function updateCountdown() {
   let now = new Date().getTime();
   let distance = endTime - now;
 
- if (distance < 0) {
+if (distance < 0) {
   localStorage.removeItem("offerEndTime");
   location.reload();
+  return;
 }
 
   let hours = Math.floor(distance / (1000 * 60 * 60));
