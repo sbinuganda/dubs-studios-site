@@ -191,7 +191,22 @@ p {
   0%,100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }
+.urgency-box {
+  background: rgba(124,58,237,0.1);
+  border: 1px solid rgba(124,58,237,0.3);
+  padding: 20px;
+  border-radius: 16px;
+}
 
+.countdown-box {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 15px auto;
+  padding: 12px 20px;
+  border-radius: 12px;
+  background: rgba(124,58,237,0.2);
+  width: fit-content;
+}
 
 </style>
 </head>
@@ -289,6 +304,24 @@ const observer = new IntersectionObserver(entries => {
 cards.forEach(card => {
   observer.observe(card);
 });
+</script>
+  <script>
+let duration = 2 * 60 * 60; // 2 hours
+
+function updateCountdown() {
+  let hours = Math.floor(duration / 3600);
+  let minutes = Math.floor((duration % 3600) / 60);
+  let seconds = duration % 60;
+
+  document.getElementById("countdown").innerHTML =
+    `${hours.toString().padStart(2,'0')}:` +
+    `${minutes.toString().padStart(2,'0')}:` +
+    `${seconds.toString().padStart(2,'0')}`;
+
+  if (duration > 0) duration--;
+}
+
+setInterval(updateCountdown, 1000);
 </script>
 <!-- FLOATING WHATSAPP BUTTON -->
 <a href="https://wa.me/256767560006?text=AI" class="whatsapp-float">
