@@ -137,10 +137,14 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .logo-container img {
-  width: 140px; /* adjust size */
+  max-width: 120px;
+  height: auto;
+  display: block;
 }
 
 .logo-container img:hover {
@@ -155,7 +159,7 @@ p {
 <!-- NAVBAR -->
 <header class="flex justify-between items-center px-8 py-6">
 <div class="logo-container">
-  <img src="logo.png" alt="Dubs Studio Logo">
+  <img src="logo.png" alt="Dubs AI Studio Logo">
 </div>
 
   <nav class="hidden md:flex space-x-6 text-gray-300">
