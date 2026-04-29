@@ -275,7 +275,7 @@ p {
   <p>🔥 Only a few spots left — offer ends soon</p>
 </div>
 <a href="https://wa.me/256767560006?text=AI" class="btn">
-👉 Join Now
+👉 Join Now on WhatsApp
 </a>
 
 <div class="footer">
@@ -317,10 +317,10 @@ function updateCountdown() {
   let now = new Date().getTime();
   let distance = endTime - now;
 
-  if (distance < 0) {
-    document.getElementById("countdown").innerHTML = "00:00:00";
-    return;
-  }
+ if (distance < 0) {
+  localStorage.removeItem("offerEndTime");
+  location.reload();
+}
 
   let hours = Math.floor(distance / (1000 * 60 * 60));
   let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
